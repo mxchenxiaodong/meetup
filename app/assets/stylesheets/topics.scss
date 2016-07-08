@@ -29,16 +29,20 @@ $red: #EB5424;
       font-size: 15px;
       margin-bottom: 0;
       a:link,
-      a:visited { color: #222; font-weight: 400; line-height: 30px; }
-      // i.fa { color: #999; margin-left: 3px; }
-      // i.fa-diamond { color: $red; }
+      a:visited {
+        color: #222;
+        font-weight: 400;
+        line-height: 30px; }
     }
     .info {
-      color: #ABA8A6; font-size: 12px; margin-top: 0;
-      // a { color: #ABA8A6; }
+      color: #ABA8A6;
+      font-size: 12px;
+      margin-top: 0;
     }
     .count {
-      width: 100px; text-align: right; padding-top: 15px;
+      width: 100px;
+      text-align: right;
+      padding-top: 15px;
       a:link,
       a:hover,
       a:visited {
@@ -46,7 +50,8 @@ $red: #EB5424;
         color: #fff;
         min-width: 32px;
         text-align: center;
-        border-radius: 80px; padding: 3px 8px 3px 8px;
+        border-radius: 80px;
+        padding: 3px 8px 3px 8px;
         display: inline-block;
         text-decoration: none;
       }
@@ -64,7 +69,6 @@ $red: #EB5424;
 
   .reply {
     padding: 10px;
-
     border-bottom: 1px solid #eee;
 
     .infos {
