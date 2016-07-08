@@ -1,0 +1,46 @@
+zh-CN:
+  activerecord:
+    attributes:
+      user:
+        name: "用户名"
+        email: "登录邮箱"
+        phone: "手机号码"
+        password: "密码"
+      topic:
+        title: "话题标题"
+        content: "话题内容"
+      reply:
+        content: "回复内容"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "不能为空"
+              invalid: "格式不正确"
+              too_short: "长度太短"
+              too_long: "长度太长"
+              taken: "已经被使用"
+            name:
+              blank: "不能为空"
+            phone:
+              blank: "不能为空"
+              not_a_number: "不是数字"
+              invalid: "格式不正确"
+              taken: "已经被使用"
+            password:
+              blank: "不能为空"
+              too_short: "长度太短"
+              too_long: "长度太长"
+        topic:
+          attributes:
+            title:
+              blank: "不能为空"
+            content:
+              blank: "不能为空"
+        reply:
+          attributes:
+            title:
+              blank: "不能为空"
+            content:
+              blank: "不能为空"

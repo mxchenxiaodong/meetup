@@ -1,0 +1,37 @@
+<% provide(:title, "话题列表") %>
+
+<div class="row">
+  <div class="col-md-2"></div>
+
+  <div class="col-md-8">
+    <div class="topics panel panel-default">
+      <div class="panel-heading">共发布 <%= @total_count %> 个话题</div>
+        <div class="panel-body">
+          <% @topics.each_with_index do |topic, index| %>
+            <div class="topic media">
+              <div class="infos media-body">
+                <div class="title media-heading">
+                  <a title="<%= topic.title %>" href="/topics/<%= topic.id %>"><%= topic.title %></a>
+                </div>
+                <div class="info">
+                  <span><%= topic_creator(topic) %></span>
+                  · 发布于
+                  <span><%= time_tag(topic.created_at) %></span>
+                </div>
+              </div>
+              <div class="count media-right">
+                <a href="/topics/<%= topic.id %>#reply<%= topic.replies.count %>"><%= topic.replies.count %></a>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      <div class="panel-footer">
+        <%= paginate @topics, :theme => 'twitter-bootstrap-3',
+                              :pagination_class => "pagination-md" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2"></div>
+</div>

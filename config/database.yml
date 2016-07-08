@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 50
+  username: <%= ENV['MEETUP_DATABASE_USER_NAME'] %>
+  password: <%= ENV['MEETUP_DATABASE_PASSWORD'] %>
+  socket: <%= ENV['MYSQL_SOCKET'] %>
+
+development:
+  <<: *default
+  database: Meetup_Application_Dev
+
+test:
+  <<: *default
+  database: Meetup_Application_Test
+
+production:
+  <<: *default
+  database: Meetup_Application

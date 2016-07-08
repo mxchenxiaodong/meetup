@@ -1,0 +1,63 @@
+<% provide(:title, "话题详情") %>
+
+<div class="row">
+  <div class="col-md-2"></div>
+
+  <div class="topic-detail col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading media">
+        <div class="media-body">
+          <h1 class="media-heading"><%= @topic.title %></h1>
+          <div class="info">
+            <span><%= topic_creator(@topic) %></span> · 发布于 <span><%= time_tag(@topic.created_at)%></span>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel-body">
+        <%= @topic.content_html.html_safe %>
+      </div>
+    </div>
+
+    <% if @replies.count > 0 %>
+      <div id="replies" class="panel panel-default">
+        <div class="panel-heading">共收到 <%= @replies.count %> 条回复</div>
+
+        <% @replies.each_with_index do |reply, index| %>
+          <div class="reply" id="reply<%= index + 1 %>">
+            <div class="infos">
+              <div class="info">
+                <span class="name"><%= reply_creator(reply) %></span>
+                · #<%= index + 1 %> ·
+                <span class="time"><%= time_tag(reply.created_at) %></span>
+              </div>
+              <div class="markdown">
+                <%= reply.content_html.html_safe %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div id="reply" class="panel panel-default">
+      <div class="panel-heading">
+        回复
+      </div>
+      <div class="panel-body">
+        <%= form_tag("/topics/#{@topic.id}/replies",class: "new_reply", id: "new_reply", remote: true) do %>
+          <div class="form-group">
+            <textarea class="form-control" rows="5" name='reply[content]' placeholder="回复话题，请使用markdown编辑"></textarea>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <button type='submit' name='commit' class="btn btn-primary btn-block">保存</button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2"></div>
+</div>
