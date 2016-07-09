@@ -56,6 +56,7 @@ end
 # Markdown
 gem 'redcarpet', '~> 3.3.4'
 
+# for test
 gem 'rspec-rails'
 gem 'capybara'
 gem 'factory_girl_rails'
