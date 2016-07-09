@@ -18,13 +18,13 @@ module Meetup
   end
 
   class Render < Redcarpet::Render::HTML
-    def initialize(extensions={})
+    def initialize(options={})
       extensions = {
         autolink: true,
         superscript: true,
         disable_indented_code_blocks: true
       }
-      super(extensions.merge(extensions))
+      super(extensions.merge(options))
     end
   end
 end

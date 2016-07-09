@@ -55,3 +55,7 @@ end
 
 # Markdown
 gem 'redcarpet', '~> 3.3.4'
+
+gem 'rspec-rails'
+gem 'capybara'
+gem 'factory_girl_rails'

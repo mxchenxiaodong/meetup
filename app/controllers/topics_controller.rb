@@ -18,7 +18,7 @@ class TopicsController < ApplicationController
     @topic.user_id = current_user.id
 
     if @topic.save
-      redirect_to topics_path
+      redirect_to topics_url
     else
       flash.now[:danger] = @topic.errors.full_messages
       render :new

@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
 
   has_secure_password # user should has password_digest and can use authenticate
 
+
+  has_many :topics
 end
