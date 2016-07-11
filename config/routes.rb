@@ -13,5 +13,10 @@ Rails.application.routes.draw do
     resources :replies
   end
 
+  namespace :v1 do
+    post '/login', to: 'sessions#create'
+
+    resources :topics, only: [:index]
+  end
 
 end

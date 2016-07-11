@@ -14,30 +14,30 @@
 ActiveRecord::Schema.define(version: 20160707032925) do
 
   create_table "replies", force: :cascade do |t|
-    t.integer  "user_id",      limit: 4
-    t.integer  "topic_id",     limit: 4
-    t.text     "content",      limit: 65535
+    t.integer  "user_id",      limit: 4,     null: false
+    t.integer  "topic_id",     limit: 4,     null: false
+    t.text     "content",      limit: 65535, null: false
     t.text     "content_html", limit: 65535
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
 
   create_table "topics", force: :cascade do |t|
-    t.integer  "user_id",      limit: 4
-    t.string   "title",        limit: 255
-    t.text     "content",      limit: 65535
+    t.integer  "user_id",      limit: 4,     null: false
+    t.string   "title",        limit: 255,   null: false
+    t.text     "content",      limit: 65535, null: false
     t.text     "content_html", limit: 65535
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "phone",           limit: 255
-    t.string   "email",           limit: 255
-    t.string   "password_digest", limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "name",                 limit: 255, null: false
+    t.string   "email",                limit: 255, null: false
+    t.string   "password_digest",      limit: 255, null: false
+    t.string   "authentication_token", limit: 255, null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
 end
