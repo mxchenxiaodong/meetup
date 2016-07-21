@@ -10,4 +10,5 @@ class Reply < ActiveRecord::Base
   def fill_content_html
     self.content_html = Meetup::Markdown.render(self.content)
   end
+
 end

@@ -1,0 +1,58 @@
+
+
+
+<!-- <section>
+    <%= image_tag "a.png" %>
+    <p>This text sits next to the image and because the...</p>
+    <%= image_tag "b.png" %>
+    <p>This text is short, so the next image can float up...</p>
+    <%= image_tag "c.png" %>
+    <p>Because the previous image’s text does not...</p>
+</section> -->
+
+<!-- <p>First Paragraph</p>
+<p>Second Paragraph</p>
+<p id="specialpara">Third Paragraph (with ID)</p>
+<p>Fourth Paragraph</p>
+ -->
+
+<div id='out'>
+    <div id='inner'> this is text ...</div>
+</div>
+
+<style type="text/css">
+  /*p#specialpara {
+    position: fixed;
+    top: 100px;
+    left: 200px;
+    background: yellow;
+  }*/
+
+
+  div#out {
+    position: relative;
+    width: 250px;
+    margin: 50px 40px;
+    border-top: 3px solid red;
+  }
+
+  div#inner {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background: #ccc;
+  }
+
+  body {background-color:#caebff;}
+  p {/*盒子布局样式*/
+    font-family:helvetica, arial, sans-serif;
+    font-size:18px;
+    width:350px;
+    margin:20px auto;
+    padding:10px; /*这个例子中讨论背景和前景样式*/
+    background-color:#fff;
+    color:#666;
+    border:4px solid;
+}
+
+</style>

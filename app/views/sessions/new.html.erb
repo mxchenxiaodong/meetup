@@ -1,6 +1,6 @@
 <% provide(:title, "登录") %>
 
-<div class="row margin-top-100">
+<!-- <div class="row margin-top-100">
   <div class="col-md-4"></div>
   <div class="col-md-4">
     <div class="panel panel-default" id="login">
@@ -21,4 +21,73 @@
     </div>
   </div>
   <div class="col-md-4"></div>
+</div> -->
+
+<div class="panel panel-default login" id="login">
+  <div class="panel-heading">登录</div>
+  <div class="panel-body">
+    <%= form_tag("/login", id: "login", remote: true) do |f| %>
+      <div class="form-group">
+        <input type="text" class="form-control input-lg" name="session[email]" placeholder="登录邮箱">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control input-lg" name="session[password]" placeholder="密码">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">登录</button>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+<!-- 行内元素，设置父级的text-align -->
+<div class="txtCenter">
+  我是否能够水平居中。
+</div>
+
+<div class="blockCenter">
+  我是否能够水平居中。
+</div>
+
+<div class="inlineCenter">
+  <ul>
+    <li><a href="#">第1</a></li>
+    <li><a href="#">第2</a></li>
+    <li><a href="#">第3</a></li>
+  </ul>
+
+
+</div>
+
+<style type="text/css">
+  .login {
+
+  }
+
+  .txtCenter {
+    border: 2px red solid;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .blockCenter {
+    border: 2px red solid;
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .inlineCenter {
+    text-align: center;
+  }
+
+  .inlineCenter ul {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+  }
+
+  .inlineCenter ul li {
+    display: inline;
+  }
+
+</style>

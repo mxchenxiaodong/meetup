@@ -5,6 +5,7 @@ class CreateTopics < ActiveRecord::Migration
       t.string :title,      null: false
       t.text :content,      null: false
       t.text :content_html
+      t.integer :lock_version, default: 0
 
       t.timestamps null: false
     end
